@@ -389,7 +389,7 @@ margin: 10px 0px 0px 0px!important;
                     </div>
                     <div class="elementor-element elementor-element-40fab1fc af slide-up elementor-widget elementor-widget-heading" data-id="40fab1fc" data-element_type="widget" data-widget_type="heading.default">
                         <div class="elementor-widget-container">
-                            <h2 class="elementor-heading-title elementor-size-default">[ Nama Tamu ]</h2>
+                            <h2 class="elementor-heading-title elementor-size-default"  id="myDiv">[ Nama Tamu ]</h2>
                         </div>
                     </div>
                     <div class="elementor-element elementor-element-6fa0af28 elementor-align-center af slide-up elementor-widget elementor-widget-button" data-id="6fa0af28" data-element_type="widget" id="open" data-widget_type="button.default">
@@ -1778,6 +1778,16 @@ function playAudio(){var isYT=!1;if(document.body.contains(document.getElementBy
     }
     </style>
     <script>
+		window.onload = function () {
+      // Ambil parameter dari URL
+      const params = new URLSearchParams(window.location.search);
+      const isiKonten = params.get("to");
+      if (isiKonten) {
+        document.getElementById("myDiv").textContent = isiKonten;
+      } else {
+        document.getElementById("myDiv").textContent = "Everyone";
+      }
+    };
     document.addEventListener("DOMContentLoaded", function() {
         const toggleButton = document.getElementById("open");
         const videoElement = document.querySelector(".elementor-background-video-container video");
@@ -1798,3 +1808,4 @@ function playAudio(){var isYT=!1;if(document.body.contains(document.getElementBy
 </body>
 
 </html>
+
